@@ -374,15 +374,18 @@ button:hover {
 }
 
 @media (max-width: 850px) {
+
   .app-container {
-    padding: 1rem;
+    padding: 1.5rem;
     width: 95%;
     border-radius: 16px;
+    margin-top: 60px;
   }
 
   h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    display: none; 
   }
 
   .favorites-grid {
@@ -392,61 +395,49 @@ button:hover {
   }
   
   .favorite-card {
-    height: 80px;
+    height: 70px;
     border-radius: 10px;
   }
 
-  .overlay {
-    padding: 5px;
-    justify-content: center;
-  }
-
-  .fav-name { 
-    font-size: 0.7rem; 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
-  .fav-temp { font-size: 1rem; }
-  
-  .fav-icon {
-    width: 25px;
-    height: 25px;
-  }
+  .fav-name { font-size: 0.7rem; }
+  .fav-temp { font-size: 0.9rem; }
+  .fav-icon { width: 25px; height: 25px; }
 
   .search-section {
     margin-bottom: 15px;
+    width: 100%;
   }
 
   .search-box {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
     width: 100%;
   }
 
   .search-box input {
-    width: 100% !important;
+    flex: 1;
     font-size: 16px;
-    padding: 10px;
-    flex-grow: 1;
-    order: 1;
-  }
-
-  .search-box button:not(.geo-btn) {
-    width: auto !important;
-    padding: 10px 20px;
-    flex-grow: 1;
-    order: 2;
+    padding: 12px;
+    height: 50px;  
+    box-sizing: border-box;
   }
 
   .geo-btn {
-    order: 3;
-    width: 45px !important;
-    height: 45px !important;
+    width: 50px !important;
+    height: 50px !important;
+    flex-shrink: 0; 
+    margin: 0 !important;
+    border-radius: 12px !important;
+  }
+
+  .search-box button:not(.geo-btn) {
+    width: 100% !important;
+    padding: 12px;
+    margin-top: 5px;
   }
   
+
   .weather-display {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -458,8 +449,8 @@ button:hover {
   }
 
   .visual-container {
-    height: 180px;
-    min-height: 180px;
+    height: 200px; 
+    min-height: 200px;
     order: 1;
   }
 
@@ -471,34 +462,9 @@ button:hover {
   }
 
   .weather-info h2 { font-size: 1.5rem; }
-  
-  .main-temp { margin: 5px 0; }
   .main-temp img { width: 60px; height: 60px; }
-  .main-temp span { font-size: 2.5rem; }
+  .main-temp span { font-size: 3rem; }
   
-  .description {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-
-  .details-grid {
-    gap: 8px;
-  }
-
-  .detail-item {
-    padding: 8px;
-    font-size: 0.8rem;
-  }
-
-  .detail-item strong {
-    font-size: 1rem;
-  }
-
-  .forecast-section {
-    margin-top: 15px;
-    padding-top: 10px;
-  }
-
   .forecast-row {
     overflow-x: auto;
     justify-content: space-between;
@@ -506,13 +472,13 @@ button:hover {
   }
   
   .forecast-item { 
-    min-width: 50px; 
+    min-width: 55px; 
     padding: 5px;
   }
-  
-  .day-name { font-size: 0.75rem; }
-  .day-temp { font-size: 0.8rem; }
-  .forecast-item img { width: 30px; height: 30px; }
+}
+
+@media (max-width: 380px) {
+  .favorites-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 400px) {
