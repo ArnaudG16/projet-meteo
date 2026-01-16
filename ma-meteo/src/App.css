@@ -90,7 +90,6 @@ h1 {
   height: 50px;
 }
 
-/* --- RECHERCHE --- */
 .search-section {
   display: flex;
   flex-direction: column;
@@ -331,7 +330,6 @@ button {
   font-size: 0.9rem;
 }
 
-
 @media (max-width: 850px) {
 
   .app-container {
@@ -339,7 +337,7 @@ button {
     width: 95%;
     border-radius: 16px;
     margin-top: 70px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 
   h1 { display: none; }
@@ -399,7 +397,11 @@ button {
   .toggle-map-btn { top: 10px; right: 10px; }
 
   .weather-info h2 { font-size: 1.8rem; }
-  .main-temp { justify-content: center; }
+  
+  .main-temp { 
+    justify-content: center; 
+    width: 100%;
+  }
   .main-temp img { width: 70px; height: 70px; }
   .main-temp span { font-size: 3.5rem; }
   
@@ -408,26 +410,27 @@ button {
   .details-grid {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .detail-item {
     display: flex;
-    flex-direction: row !important; 
-    justify-content: space-between !important; 
+    flex-direction: row !important;
+    justify-content: space-between !important;
     align-items: center !important;
-    padding: 15px 20px;
+    padding: 10px 15px;
     width: 100%;
     box-sizing: border-box;
+    min-height: auto;
   }
   
   .detail-item span {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: normal;
   }
   
   .detail-item strong {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #ffffff !important;
     display: block !important;
@@ -435,23 +438,6 @@ button {
   }
 
   .forecast-section {
-    margin-top: 25px;
-    padding-top: 20px;
+    display: none !important;
   }
-  
-  .forecast-row {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 12px;
-    padding-bottom: 10px;
-  }
-  
-  .forecast-item { 
-    min-width: 70px;
-    padding: 10px 5px;
-    background: rgba(255, 255, 255, 0.15);
-  }
-  
-  .day-name { font-size: 0.9rem; }
-  .day-temp { font-size: 1rem; }
 }
