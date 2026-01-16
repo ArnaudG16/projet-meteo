@@ -1,16 +1,41 @@
-# React + Vite
+# 🌤️ Météo Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application météo complète et interactive réalisée avec React (Vite).
+Le projet intègre la géolocalisation, une carte interactive et des fonds d'écran dynamiques.
 
-Currently, two official plugins are available:
+## 🚀 Fonctionnalités
+* **Météo en temps réel** : Données précises via OpenWeatherMap.
+* **Prévisions 5 jours** : Affichage simplifié des températures à venir.
+* **Géolocalisation** : Bouton pour obtenir la météo de votre position actuelle.
+* **Cycle Jour/Nuit** : Les images des villes favorites changent selon l'heure (Matin, Jour, Soir, Nuit).
+* **Carte Interactive** : Basculez entre la photo de la ville et sa vue satellite (Leaflet).
+* **Photos Dynamiques** : Si la ville n'est pas en favori, une image est générée via Unsplash.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies
+* React.js (Vite)
+* Leaflet & React-Leaflet (Cartographie)
+* OpenWeatherMap API
+* Unsplash API
+* CSS3 (Glassmorphism & Responsive)
 
-## React Compiler
+## 📦 Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  Cloner le repo
+2.  
+3.  Installer les dépendances :
+    ```bash
+    npm install
+    ```
+4.  Configurer les clés API :
+    Créez un fichier `.env` à la racine et ajoutez :
+    ```env
+    VITE_WEATHER_API_KEY=votre_cle_openweathermap
+    VITE_UNSPLASH_ACCESS_KEY=votre_cle_unsplash
+    ```
+5.  Lancer le projet :
+    ```bash
+    npm run dev
+    ```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+*Projet réalisé par Arnaud Grassian*
