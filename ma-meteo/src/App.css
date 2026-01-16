@@ -288,83 +288,67 @@ button:hover {
 
   .favorites-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
   
   .favorite-card {
     height: 120px;
   }
 
-  .fav-name {
-    font-size: 1rem;
-  }
-
-  .fav-temp {
-    font-size: 1.4rem;
-  }
+  .fav-name { font-size: 1rem; }
+  .fav-temp { font-size: 1.4rem; }
 
   .search-box {
-    flex-direction: column;
+    flex-direction: column; 
     gap: 10px;
+    width: 100%;
   }
 
-  input, button, .geo-btn {
+  .search-box input {
     width: 100% !important;
-    max-width: none;
+    font-size: 16px; 
+    padding: 12px;   
   }
-  
-  .search-box {
-    position: relative;
+
+  .search-box button:not(.geo-btn) {
+    width: 100% !important;
+    padding: 12px;
+  }
+
+  .geo-btn {
+    width: 50px !important; 
+    height: 50px !important;
+    align-self: flex-end;
   }
   
   .weather-display {
     grid-template-columns: 1fr;
-    min-height: auto;
   }
 
   .weather-info {
-    padding: 25px;
-    order: 2;}
-  
+    padding: 20px;
+    order: 2;
+  }
 
   .visual-container {
     height: 250px;
     min-height: 250px;
-    order: 1; 
+    order: 1;
   }
 
-  .weather-info h2 {
-    font-size: 1.8rem;
-  }
-
-  .main-temp span {
-    font-size: 3.5rem;
-  }
+  .weather-info h2 { font-size: 1.8rem; }
+  .main-temp span { font-size: 3.5rem; }
   
-  .main-temp img {
-    width: 70px;
-    height: 70px;
-  }
-
   .forecast-row {
     overflow-x: auto;
     justify-content: flex-start;
-    gap: 15px;
     padding-bottom: 10px;
   }
-  
-  .forecast-item {
-    min-width: 60px;
-  }
+  .forecast-item { min-width: 60px; }
 }
 
 @media (max-width: 400px) {
-  .favorites-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-  }
+  .favorites-grid { grid-template-columns: 1fr; }
 }
 
 @keyframes fadeIn {
