@@ -50,13 +50,7 @@ h1 {
   background-position: center;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.favorite-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }
 
 .overlay {
@@ -76,9 +70,8 @@ h1 {
   text-shadow: 0 2px 4px rgba(0,0,0,0.8);
   text-align: left;
   margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal; 
+  line-height: 1.2;
 }
 
 .fav-info {
@@ -97,6 +90,7 @@ h1 {
   height: 50px;
 }
 
+/* --- RECHERCHE --- */
 .search-section {
   display: flex;
   flex-direction: column;
@@ -134,12 +128,23 @@ button {
   font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: transform 0.2s;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-button:hover {
-  transform: scale(1.05);
+.geo-btn {
+  padding: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #333 !important;
+  font-size: 1.5rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-image: none !important;
+  flex-shrink: 0;
 }
 
 .error {
@@ -188,15 +193,8 @@ button:hover {
   margin: 15px 0;
 }
 
-.main-temp img {
-  width: 100px;
-  height: 100px;
-}
-
-.main-temp span {
-  font-size: 5rem;
-  font-weight: 700;
-}
+.main-temp img { width: 100px; height: 100px; }
+.main-temp span { font-size: 5rem; font-weight: 700; }
 
 .description {
   font-size: 1.4rem;
@@ -225,6 +223,7 @@ button:hover {
 .detail-item strong {
   font-size: 1.2rem;
   margin-top: 5px;
+  color: #fff;
 }
 
 .visual-container {
@@ -245,11 +244,6 @@ button:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
   border-radius: 30px !important;
   background-image: none !important;
-}
-
-.toggle-map-btn:hover {
-  transform: scale(1.05);
-  background: #fff !important;
 }
 
 .city-image {
@@ -286,14 +280,7 @@ button:hover {
   font-weight: bold;
   text-decoration: none;
   font-size: 1.1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.linkedin-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-  color: white;
+  margin-bottom: 20px;
 }
 
 .forecast-section {
@@ -325,11 +312,6 @@ button:hover {
   padding: 10px 5px;
   border-radius: 10px;
   width: 60px;
-  transition: background 0.2s;
-}
-
-.forecast-item:hover {
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .day-name {
@@ -349,46 +331,18 @@ button:hover {
   font-size: 0.9rem;
 }
 
-.geo-btn {
-  padding: 0 !important;
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 12px !important;
-  background: rgba(255, 255, 255, 0.95) !important;
-  color: #333 !important;
-  font-size: 1.5rem !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-  background-image: none !important;
-  flex-shrink: 0;
-}
-
-.geo-btn:hover {
-  transform: scale(1.1);
-  background: #fff !important;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-.geo-btn:active {
-  transform: scale(0.95);
-}
 
 @media (max-width: 850px) {
 
   .app-container {
-    padding: 1.2rem;
+    padding: 1rem;
     width: 95%;
     border-radius: 16px;
-    margin-top: 60px;
+    margin-top: 70px;
     padding-bottom: 50px;
   }
 
-  h1 {
-    display: none;
-  }
+  h1 { display: none; }
 
   .favorites-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -397,26 +351,22 @@ button:hover {
   }
   
   .favorite-card {
-    height: 90px;
-    border-radius: 12px;
+    height: 100px;
   }
 
-  .fav-name { font-size: 0.9rem; }
+  .fav-name { 
+    font-size: 0.9rem; 
+    white-space: normal; 
+    word-wrap: break-word;
+    overflow: visible; 
+  }
+  
   .fav-temp { font-size: 1.2rem; }
   .fav-icon { width: 35px; height: 35px; }
 
-  .search-section {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  .search-box {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-  }
-
+  .search-section { margin-bottom: 20px; width: 100%; }
+  .search-box { display: flex; flex-wrap: wrap; gap: 10px; width: 100%; }
+  
   .search-box input {
     flex: 1;
     font-size: 16px;
@@ -430,7 +380,6 @@ button:hover {
     height: 50px !important;
     flex-shrink: 0;
     margin: 0 !important;
-    border-radius: 12px !important;
   }
 
   .search-box button:not(.geo-btn) {
@@ -445,23 +394,9 @@ button:hover {
     min-height: auto;
   }
 
-  .weather-info {
-    padding: 20px;
-    order: 2;
-  }
-
-  .visual-container {
-    height: 200px; 
-    min-height: 200px;
-    order: 1;
-  }
-
-  .toggle-map-btn {
-    top: 10px;
-    right: 10px;
-    padding: 6px 12px !important;
-    font-size: 0.8rem !important;
-  }
+  .weather-info { padding: 20px; order: 2; }
+  .visual-container { height: 200px; min-height: 200px; order: 1; }
+  .toggle-map-btn { top: 10px; right: 10px; }
 
   .weather-info h2 { font-size: 1.8rem; }
   .main-temp { justify-content: center; }
@@ -471,18 +406,33 @@ button:hover {
   .description { text-align: center; margin-bottom: 20px; }
 
   .details-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
 
   .detail-item {
-    flex-direction: row;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    align-items: center !important;
     padding: 15px 20px;
-    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
   
-  .detail-item span { margin-right: auto; }
+  .detail-item span {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .detail-item strong {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff !important;
+    display: block !important;
+    margin-top: 0 !important;
+  }
 
   .forecast-section {
     margin-top: 25px;
@@ -497,8 +447,11 @@ button:hover {
   }
   
   .forecast-item { 
-    min-width: 65px;
-    padding: 8px;
+    min-width: 70px;
+    padding: 10px 5px;
     background: rgba(255, 255, 255, 0.15);
   }
+  
+  .day-name { font-size: 0.9rem; }
+  .day-temp { font-size: 1rem; }
 }
